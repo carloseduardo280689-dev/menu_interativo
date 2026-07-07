@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menu_interativo/constants/imgs.dart';
+import 'package:menu_interativo/constants/nome_preco.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -14,15 +16,66 @@ class _MenuState extends State<Menu> {
       
         Column(
           children: [
-            Container(
-              color: const Color.fromARGB(255, 21, 2, 2),
+
+            for (int i = 0; i < nome_lanches.length; i++)
               
+            Container(
+              color: const Color.fromARGB(255, 136, 110, 110),
+              height: 150,
 
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                
                 children: [
-                  Text('Item 1'),
-                  Text('R\$ 10,00'),
+
+                  RotatedBox(
+                    quarterTurns: 3,
+                    child: Text(
+                      nome_lanches[i],
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+
+                  
+                  Image(
+                    image: AssetImage(lanches_img[i]["img"]),
+                    fit: BoxFit.cover,
+                    height: 150,
+                    width: 150,
+                  ),
+
+                  Spacer(),
+
+                  Column(
+
+                    children: [
+                      Text(descricao_lanches[i],
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        ),
+                      ),
+                      
+                      Text(
+                        ingredientes_lanches[i],
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
+                      ),
+
+                      Text(
+                        "R\$ ${preco_lanches[i].toStringAsFixed(2)}",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  
                 ],
               ),
             )

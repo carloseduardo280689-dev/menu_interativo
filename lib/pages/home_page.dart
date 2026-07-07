@@ -14,9 +14,9 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
           body: ListView(
             scrollDirection: Axis.vertical,
-
             children: [
               Column(
                 children: [
