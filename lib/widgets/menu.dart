@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menu_interativo/constants/imgs.dart';
 import 'package:menu_interativo/constants/nome_preco.dart';
+import 'package:menu_interativo/widgets/botao_quant.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -10,6 +11,8 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+  get quant_lanches => null;
+
   @override
   Widget build(BuildContext context) {
     return 
@@ -45,6 +48,8 @@ class _MenuState extends State<Menu> {
                     height: 150,
                     width: 150,
                   ),
+
+                  
 
                   Spacer(),
 
