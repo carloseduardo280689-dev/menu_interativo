@@ -11,7 +11,9 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  get quant_lanches => null;
+  double quantidade_lanches = 0;
+  double valorDoLanche = 0;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,21 @@ class _MenuState extends State<Menu> {
                     width: 150,
                   ),
 
-                  
+                  BotaoQuant(
+                    valorInicial:quantidade_lanches,
+                    valorLanche: preco_lanches[i],
+                     valueChanged: (newValue) {
+                      setState(() {
+                        quantidade_lanches = newValue;
+                      });
+                    },
+                   
+                   valorMudado: (somaValues) {
+                    setState(() {
+                      valorDoLanche = somaValues;
+                    });
+                   }
+                  ),
 
                   Spacer(),
 
